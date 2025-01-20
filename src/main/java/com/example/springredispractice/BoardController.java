@@ -1,5 +1,6 @@
 package com.example.springredispractice;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,6 +19,7 @@ public class BoardController {
     }
 
     @GetMapping()
+    @Cacheable(cacheNames = "getBoards", key = "'boards:page:' + #page + ':size:' + #size", cacheManager = "boardCacheManager")
     public List<Board> getBoards(
             @RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int size
     ) {
