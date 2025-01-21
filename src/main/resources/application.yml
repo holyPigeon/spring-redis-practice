@@ -19,3 +19,13 @@ spring:
 logging:
   level:
     org.springframework.cache: trace
+
+---
+
+spring:
+  profiles:
+    default: prod
+  datasource:
+    url: jdbc:mysql://spring-redis-practice-database.cv4c6ysy8cvy.ap-northeast-2.rds.amazonaws.com:3306/spring_redis_practice
+    username: admin
+    password: '00000000'
