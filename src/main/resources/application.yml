@@ -29,3 +29,7 @@ spring:
     url: jdbc:mysql://spring-redis-practice-database.cv4c6ysy8cvy.ap-northeast-2.rds.amazonaws.com:3306/spring_redis_practice
     username: admin
     password: password
+  data:
+    redis:
+      host: spring-redis-practice-cache-server.2ex44z.ng.0001.apn2.cache.amazonaws.com
+      port: 6379
